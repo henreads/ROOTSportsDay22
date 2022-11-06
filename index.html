@@ -224,6 +224,8 @@
   /* grid-column-gap: 10px; - if you want gap between the columns */
 } 
 
+.grid-container h3:hover {color: black}
+
 
 /* Style the left column */
 .left {
@@ -250,10 +252,23 @@
   }
 }
 
+
+
 img {
   max-width: 40%;
   height: auto;
   border-radius: 50%;
+}
+
+.rotate img{
+transition: 1s ease;
+}
+
+.rotate img:hover{
+-webkit-transform: rotateZ(-30deg);
+-ms-transform: rotateZ(-30deg);
+transform: rotateZ(-30deg);
+transition: 1s ease;
 }
 
 </style>
@@ -280,23 +295,32 @@ img {
 
 <body>
   <div class="w3-center">
-    <h1 class="titles">MAIN EVENTS</h1>
+    <h1 class="titles" >MAIN EVENTS</h1>
     <div class="grid-container">
         <div class="left">
           <h3 class="basketball" style="font-size:20px;">Basketball</h3>
-          <img src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794__480.png"  width="300" height="300">
+          <div class="rotate">
+           <img src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794__480.png"  width="300" height="300">
+         </div>
         </div>
 
         <div class="middle">
           <h3 class="soccer" style="font-size:20px;">Soccer</h3><br>
-          <img src="https://www.kindpng.com/picc/m/112-1123233_soccer-ball-vector-png-transparent-png.png" width="310" height="310">
+          <div class="rotate">
+            <img src="https://www.kindpng.com/picc/m/112-1123233_soccer-ball-vector-png-transparent-png.png" width="310" height="310">
+          </div>
         </div>
       
           <div class="right">
             <h3 class="cball" style="font-size:20px;">Captain's Ball</h3>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjkHiAJy0RCPE2Jqq85qkHdVPxAiErxFoCIXL5u2MuFOMziM7mwR5DmIM61Ps--4YyjY&usqp=CAU"  width="330" height="330">
+            <div class="rotate">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjkHiAJy0RCPE2Jqq85qkHdVPxAiErxFoCIXL5u2MuFOMziM7mwR5DmIM61Ps--4YyjY&usqp=CAU"  width="330" height="330">
+            </div>
           </div>
     </div>
+
+      <h1 class="titles" >MINIGAMES</h1>
+
   </div>
 </body>
 
