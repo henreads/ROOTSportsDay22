@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
   <style>
     div {
       position: relative;
@@ -69,10 +73,184 @@
   }
 }
 
-  </style>
-  </head>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #f6aca2;
+  --color-secondary: #f49b90;
+  --color-tertiary: #f28b7d;
+  --color-quaternary: #f07a6a;
+  --color-quinary: #ee6352;
+  /*
+  --color-primary: #5192ED;
+  --color-secondary: #69A1F0;
+  --color-tertiary: #7EAEF2;
+  --color-quaternary: #90BAF5;
+  --color-quinary: #A2C4F5;
+  */
+}
+
+.content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.text_shadows {
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  font-family: bungee, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: calc(2rem + 5vw);
+  text-align: center;
+  margin: 0;
+  color: var(--color-primary);
+  //color: transparent;
+  //background-color: white;
+  //background-clip: text;
+  animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+  letter-spacing: 0.4rem;
+}
+
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  20% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  30% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  40% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  50% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  60% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  70% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  80% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(-12px, -12px);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+  }
+  60% {
+    transform: translate(-12px, -12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: DeepSkyBlue;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  colour: white;
+
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: GhostWhite;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color:#3f51b5;
+  color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  colour: white;
+}
+</style>
+</head>
+
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <a href="index.html" class="w3-bar-item w3-button">Events</a>
+  <a href="Schedules.html" class="w3-bar-item w3-button">Schedules</a>
+  <a href="#" class="w3-bar-item w3-button">Scores</a>
+  <button class="w3-bar-item w3-button" onclick="w3_close()" >Close <i class="fa fa-remove"></i></button>
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+    <h4>Root presents</h4>
+    <div class="content">
+      <h2 class="text_shadows" style="font-size:40px; font-weight:bold">SPORTS DAY 22</h2>
+    </div>
+  </div>
+</header>
   
-  <body>
+<body>
+<div class="tab">
+  <button class="tablinks" onclick="openSport(event, 'Basketball')" id="defaultOpen">Basketball</button>
+  <button class="tablinks" onclick="openSport(event, 'Futsal')">Futsal</button>
+  <button class="tablinks" onclick="openSport(event, 'Cball')">Captain's Ball</button>
+</div>
+
+<div id="Basketball" class="tabcontent">
   <div>
   <table>
     <thead>
@@ -90,40 +268,254 @@
         <th style="border-left: 3px solid">Court 1</th>
       </tr>
       <tr>
-      	<th>1930 - 1940</th>
+        <th>1930 - 1940</th>
         <td>01 vs 02</td>
         <td>04 vs 05</td>
         <td style="border-left: 3px solid">07 vs 08</td>
       </tr>
       <tr>
-      	<th>1940 - 1945</th>
+        <th>1940 - 1945</th>
         <th colspan="3" style="background-color:Orange;">Break</th>
       </tr>
       <tr>
-      	<th>1945 - 1955</th>
+        <th>1945 - 1955</th>
         <td>01 vs 03</td>
         <td>04 vs 06</td>
         <td style="border-left: 3px solid">08 vs 09</td>
       </tr>
       <tr>
-      	<th>1955 - 2000</th>
+        <th>1955 - 2000</th>
         <th colspan="3" style="background-color:Orange;">Break</th>
       </tr>
       <tr>
-      	<th>2000 - 2010</th>
+        <th>2000 - 2010</th>
         <td>02 vs 03</td>
         <td>05 vs 06</td>
         <td style="border-left: 3px solid">07 vs 09</td>
       </tr>
       <tr>
-      	<th>2010 - 2035</th>
+        <th>2010 - 2035</th>
         <th colspan="3" style="background-color:Orange;">Intermittent</th>
       </tr>
-  
     </tbody>
-	</table>
+  </table>
+</div>
+</div>
+
+<div id="Futsal" class="tabcontent">
+<div>
+  <table>
+    <thead>
+    <tr><th colspan="4">Futsal Schedule</th></tr>
+    </thead>
+    <tbody>
+    <tr><th colspan="4">Futsal Court</th></tr>
+    <tr>
+      <th>Time</th>
+      <th>Game</th>
+      <th>Time</th>
+      <th>Game</th>    
+    </tr>
+      <tr>
+        <th>1930 - 1940</th>
+        <td style="background-color:LightYellow;">01 vs 02</td>
+        <th>2032 - 2035</th>
+        <td>Break</td>
+      </tr>
+      <tr>
+      
+      <tr>
+        <th>1940 - 1943</th>
+        <td>Break</td>
+        <th>2032 - 2035</th>
+        <td style="background-color:MistyRose;">07 vs 09</td>
+      </tr>
+      
+      <tr>
+        <th>1943 - 1953</th>
+        <td style="background-color:PaleTurquoise;">04 vs 05</td>
+        <th>2045 - 2048</th>
+        <td>Break</td>
+      </tr>
+      <tr>
+      
+      <tr>
+        <th>1953 - 1956</th>
+        <td>Break</td>
+        <th>2048 - 2058</th>
+        <td style="background-color:LightYellow;">02 vs 03</td>
+      </tr>
+      <tr>
+      
+      <tr>
+        <th>1956 - 2006</th>
+        <td style="background-color:MistyRose;">07 vs 08</td>
+        <th>2058 - 2101</th>
+        <td>Break</td>
+      </tr>
+      
+      <tr>
+        <th>2006 - 2009</th>
+        <td>Break</td>
+        <th>2101 - 2111</th>
+        <td style="background-color:PaleTurquoise;">05 vs 06</td>
+      </tr>
+      
+      <tr>
+        <th>2009 - 2019</th>
+        <td style="background-color:LightYellow;">01 vs 03</td>
+        <th>2111 - 2114</th>
+        <td>Break</td>
+      </tr>
+      <tr>
+      
+      <tr>
+        <th>2019 - 2022</th>
+        <td>Break</td>
+        <th>2114 - 2124</th>
+        <td style="background-color:MistyRose;">08 vs 09</td>
+      </tr>
+      
+      <tr>
+        <th>2022 - 2032</th>
+        <td style="background-color:PaleTurquoise;">04 vs 06</td>
+        <th>2124 onwards</th>
+        <td style="background-color:LightGreen;">Proceed to ISH 1</td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
     </div>
-    </body>
+</div>
+
+<div id="Cball" class="tabcontent">
+<div>
+  <table>
+    <thead>
+    <tr><th colspan="4">Captain's Ball Schedule</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th rowspan="2">Time</th>
+    <th colspan="2">ISH 1</th>
+    <th style="border-left: 3px solid">ISH 2</th>
+    </tr>
+     <tr>
+        <th>Court 1</th>
+        <th>Court 2</th>
+        <th style="border-left: 3px solid">Court 1</th>
+      </tr>
+      <tr>
+        <th>2035 - 2045</th>
+        <td>01 vs 02</td>
+        <td>04 vs 05</td>
+        <td style="border-left: 3px solid">07 vs 08</td>
+      </tr>
+      <tr>
+        <th>2045 - 2050</th>
+        <th colspan="3" style="background-color:Plum;">Break</th>
+      </tr>
+      <tr>
+        <th>2050 - 2100</th>
+        <td>01 vs 03</td>
+        <td>04 vs 06</td>
+        <td style="border-left: 3px solid">08 vs 09</td>
+      </tr>
+      <tr>
+        <th>2100 - 2105</th>
+        <th colspan="3" style="background-color:Plum;">Break</th>
+      </tr>
+      <tr>
+        <th>2105 - 2115</th>
+        <td>02 vs 03</td>
+        <td>05 vs 06</td>
+        <td style="border-left: 3px solid">07 vs 09</td>
+      </tr>
+      <tr>
+        <th>2115 - 2135</th>
+        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Intermittent</th>
+        <td rowspan="7" style="background-color:Gainsboro;"></td>
+      </tr>
+      <tr>
+        <th>2135 - 2145</th>
+        <td colspan="2" style="border-right: 3px solid">1A vs 1B</td>
+      </tr>
+      <tr>
+        <th>2145 - 2150</th>
+        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Break</th>
+      </tr>
+      <tr>
+        <th>2150 - 2200</th>
+        <td colspan="2" style="border-right: 3px solid">1A vs 1C</td>
+      </tr>
+      <tr>
+      <th>2200 - 2205</th>
+        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Break</th>
+      </tr>
+      <tr>
+        <th>2205 - 2215</th>
+        <td colspan="2" style="border-right: 3px solid">1B vs 1C</td>
+      </tr>
+      <tr>
+      <th>2215 - 2230</th>
+        <th colspan="2" style="background-color:Aquamarine;border-right: 3px solid">Award Ceremony</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+</body>
     
 </html>
 
+<script>
+  function openSport(evt, sports) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(sports).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "30%";
+  x.style.fontSize = "100%";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+
+
+
+</script>
