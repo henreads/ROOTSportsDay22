@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    div {
+      position: relative;
+      overflow-x:auto;
+      overflow-y:auto;
+      
+    }
+
+    table {
+      position: relative;
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th {
+      padding: 0.5em;
+      border: 1px solid black;
+      
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: #000;
+      color: #FFF;
+    }
+    
+    tbody th {
+      position: sticky;
+      left: 0;
+      background: #FFF;
+      padding-left: 30px;
+ 	  padding-right: 40px;
+      border-top: 2px solid black;
+   	  border-bottom: 2px solid ;
+      
+    }
+    
+    tbody td{
+    text-align:center;
+    border-top: 2px solid black;
+    border-bottom: 2px solid ;
+    border-left: 1px solid;
+    }
+    
+    .table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  table thead {
+    display: flex;
+  }
+  table td {
+    display: flex;
+  }
+  
+  table td::before {
+    font-weight: bold;
+    width: 120px;
+    min-width: 120px;
+  }
+}
+
+  </style>
+  </head>
+  
+  <body>
+  <div>
+  <table>
+    <thead>
+    <tr><th colspan="4">Basketball Schedule</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th rowspan="2">Time</th>
+    <th colspan="2">ISH 1</th>
+    <th style="border-left: 3px solid">ISH 2</th>
+    </tr>
+     <tr>
+        <th>Court 1</th>
+        <th>Court 2</th>
+        <th style="border-left: 3px solid">Court 1</th>
+      </tr>
+      <tr>
+      	<th>1930 - 1940</th>
+        <td>01 vs 02</td>
+        <td>04 vs 05</td>
+        <td style="border-left: 3px solid">07 vs 08</td>
+      </tr>
+      <tr>
+      	<th>1940 - 1945</th>
+        <th colspan="3" style="background-color:Orange;">Break</th>
+      </tr>
+      <tr>
+      	<th>1945 - 1955</th>
+        <td>01 vs 03</td>
+        <td>04 vs 06</td>
+        <td style="border-left: 3px solid">08 vs 09</td>
+      </tr>
+      <tr>
+      	<th>1955 - 2000</th>
+        <th colspan="3" style="background-color:Orange;">Break</th>
+      </tr>
+      <tr>
+      	<th>2000 - 2010</th>
+        <td>02 vs 03</td>
+        <td>05 vs 06</td>
+        <td style="border-left: 3px solid">07 vs 09</td>
+      </tr>
+      <tr>
+      	<th>2010 - 2035</th>
+        <th colspan="3" style="background-color:Orange;">Intermittent</th>
+      </tr>
+  
+    </tbody>
+	</table>
+    </div>
+    </body>
+    
+</html>
+

@@ -1,7 +1,416 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
-  </body>
+<head>
+<title>ROOT Sports Day 2022</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<style>
+.titles {
+  padding-top: 5%;
+  padding-bottom:2%;
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 30px;
+  font-weight: 700;
+  color: DarkCyan;
+  text-shadow: 1px 1px 1px Gainsboro,
+      1px 2px 1px Gainsboro,
+      1px 3px 1px Gainsboro,
+      1px 4px 1px Gainsboro,
+      1px 5px 1px Gainsboro,
+      1px 6px 1px Gainsboro,
+      1px 7px 1px Gainsboro,
+      1px 8px 1px Gainsboro,
+      1px 9px 1px Gainsboro,
+      1px 10px 1px Gainsboro,
+  1px 18px 6px rgba(16,16,16,0.4),
+  1px 22px 10px rgba(16,16,16,0.2),
+  1px 25px 35px rgba(16,16,16,0.2),
+  1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.basketball {
+  padding-top: 5%;
+  padding-bottom:7%;
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 30px;
+  font-weight: 700;
+  color: IndianRed;
+  text-shadow: 1px 1px 1px Khaki ,
+      1px 2px 1px Khaki ,
+      1px 3px 1px Khaki ,
+      1px 4px 1px Khaki ,
+      1px 5px 1px Khaki ,
+      1px 6px 1px Khaki ,
+      1px 7px 1px Khaki ,
+      1px 8px 1px Khaki ,
+      1px 9px 1px Khaki ,
+      1px 10px 1px Khaki ,
+  1px 18px 6px rgba(16,16,16,0.4),
+  1px 22px 10px rgba(16,16,16,0.2),
+  1px 25px 35px rgba(16,16,16,0.2),
+  1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.soccer {
+  padding-top: 5%;
+  padding-bottom:0%;
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 30px;
+  font-weight: 700;
+  color: IndianRed;
+  text-shadow: 1px 1px 1px Khaki ,
+      1px 2px 1px Khaki ,
+      1px 3px 1px Khaki ,
+      1px 4px 1px Khaki ,
+      1px 5px 1px Khaki ,
+      1px 6px 1px Khaki ,
+      1px 7px 1px Khaki ,
+      1px 8px 1px Khaki ,
+      1px 9px 1px Khaki ,
+      1px 10px 1px Khaki ,
+  1px 18px 6px rgba(16,16,16,0.4),
+  1px 22px 10px rgba(16,16,16,0.2),
+  1px 25px 35px rgba(16,16,16,0.2),
+  1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.cball {
+  padding-top: 5%;
+  padding-bottom:4%;
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 30px;
+  font-weight: 700;
+  color: IndianRed;
+  text-shadow: 1px 1px 1px Khaki ,
+      1px 2px 1px Khaki ,
+      1px 3px 1px Khaki ,
+      1px 4px 1px Khaki ,
+      1px 5px 1px Khaki ,
+      1px 6px 1px Khaki ,
+      1px 7px 1px Khaki ,
+      1px 8px 1px Khaki ,
+      1px 9px 1px Khaki ,
+      1px 10px 1px Khaki ,
+  1px 18px 6px rgba(16,16,16,0.4),
+  1px 22px 10px rgba(16,16,16,0.2),
+  1px 25px 35px rgba(16,16,16,0.2),
+  1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.minigame {
+  padding-top: 5%;
+  padding-bottom:4%;
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 30px;
+  font-weight: 700;
+  color: DeepSkyBlue;
+  text-shadow: 1px 1px 1px FloralWhite ,
+      1px 2px 1px FloralWhite ,
+      1px 3px 1px FloralWhite ,
+      1px 4px 1px FloralWhite ,
+      1px 5px 1px FloralWhite ,
+      1px 6px 1px FloralWhite ,
+      1px 7px 1px FloralWhite ,
+      1px 8px 1px FloralWhite ,
+      1px 9px 1px FloralWhite ,
+      1px 10px 1px FloralWhite ,
+  1px 18px 6px rgba(16,16,16,0.4),
+  1px 22px 10px rgba(16,16,16,0.2),
+  1px 25px 35px rgba(16,16,16,0.2),
+  1px 30px 60px rgba(16,16,16,0.4);
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #f6aca2;
+  --color-secondary: #f49b90;
+  --color-tertiary: #f28b7d;
+  --color-quaternary: #f07a6a;
+  --color-quinary: #ee6352;
+  /*
+  --color-primary: #5192ED;
+  --color-secondary: #69A1F0;
+  --color-tertiary: #7EAEF2;
+  --color-quaternary: #90BAF5;
+  --color-quinary: #A2C4F5;
+  */
+}
+
+.content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.text_shadows {
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  font-family: bungee, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: calc(2rem + 5vw);
+  text-align: center;
+  margin: 0;
+  color: var(--color-primary);
+  //color: transparent;
+  //background-color: white;
+  //background-clip: text;
+  animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+  letter-spacing: 0.4rem;
+}
+
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  20% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  30% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  40% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  50% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  60% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  70% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  80% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(-12px, -12px);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+  }
+  60% {
+    transform: translate(-12px, -12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'left left middle middle right right' 
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+} 
+
+.grid-container h3:hover {color: black}
+
+
+/* Style the left column */
+.left {
+  grid-area: left;
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right';
+  }
+  .column {
+    width: 100%;
+  }
+}
+
+
+
+
+
+img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.rotate img{
+transition: 1s ease;
+}
+
+.rotate img:hover{
+-webkit-transform: rotateZ(-30deg);
+-ms-transform: rotateZ(-30deg);
+transform: rotateZ(-30deg);
+transition: 1s ease;
+}
+
+</style>
+</head>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <a href="#" class="w3-bar-item w3-button">Main Events</a>
+  <a href="#" class="w3-bar-item w3-button">Minigames</a>
+  <a href="#" class="w3-bar-item w3-button">Scores</a>
+  <button class="w3-bar-item w3-button" onclick="w3_close()" >Close <i class="fa fa-remove"></i></button>
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+    <h4>Root presents</h4>
+    <div class="content">
+      <h2 class="text_shadows" style="font-size:40px; font-weight:bold">SPORTS DAY 22</h2>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="w3-center">
+    <h1 class="titles" >MAIN EVENTS</h1>
+    <div class="grid-container">
+        <div class="left">
+          <h3 class="basketball" style="font-size:20px;">Basketball</h3>
+          <div class="rotate">
+           <img src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794__480.png"  width="300" height="300">
+         </div>
+        </div>
+
+        <div class="middle">
+          <h3 class="soccer" style="font-size:20px;">Soccer</h3><br>
+          <div class="rotate">
+            <img src="https://www.kindpng.com/picc/m/112-1123233_soccer-ball-vector-png-transparent-png.png" width="310" height="310">
+          </div>
+        </div>
+      
+          <div class="right">
+            <h3 class="cball" style="font-size:20px;">Captain's Ball</h3>
+            <div class="rotate">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjkHiAJy0RCPE2Jqq85qkHdVPxAiErxFoCIXL5u2MuFOMziM7mwR5DmIM61Ps--4YyjY&usqp=CAU"  width="330" height="330">
+            </div>
+          </div>
+    </div>
+      <br></br>
+      <h1 class="titles" >MINIGAMES</h1>
+
+      <div class="row">
+        <div class="column">
+          <h3 class="minigame" style="font-size:20px;">Arcade Basketball</h3>
+            <img src="https://www.icegame.com/images/category/large/1504.png"  width="350" height="350">
+        </div>
+  
+        <div class="column">
+          <h3 class="minigame" style="font-size:20px;">Pong</h3>
+            <img src="https://cdn-icons-png.flaticon.com/512/1930/1930630.png"  width="270" height="270">
+        </div>
+
+  </div>
+</body>
+
+
+
+
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "30%";
+  x.style.fontSize = "100%";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
 </html>
