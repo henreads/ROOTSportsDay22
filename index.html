@@ -339,9 +339,9 @@ div {
 /* The grid container */
 .grid-container {
   display: grid;
-  grid-template-areas: 
-    'left left middle middle right right' 
-  /* grid-column-gap: 10px; - if you want gap between the columns */
+  grid-template-areas: 'left left middle middle right right' ;
+  background-color: transparent;
+
 } 
 
 .grid-container h3:hover {color: black}
@@ -360,12 +360,14 @@ div {
 /* Style the right column */
 .right {
   grid-area: right;
+  background-color: transparent;
 }
 
 .column {
   float: left;
   width: 50%;
   padding: 15px;
+  background-color: transparent;
 }
 
 /* Clear floats after the columns */
@@ -373,6 +375,7 @@ div {
   content: "";
   display: table;
   clear: both;
+  background-color: transparent;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -412,14 +415,19 @@ transform: rotateZ(-30deg);
 transition: 1s ease;
 }
 
+body{
+  background-image: url('https://t3.ftcdn.net/jpg/05/19/88/90/360_F_519889094_wqCcbKUJkuMRPzR0CyBNPuyxM2uiZODC.jpg');
+  background-repeat: repeat;
+}
+
 </style>
 </head>
 
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
   <a href="index.html" class="w3-bar-item w3-button">Events</a>
-  <a href="Schedules.html" class="w3-bar-item w3-button">Schedules</a>
-  <a href="#" class="w3-bar-item w3-button">Scores</a>
+  <a href="#schedules" class="w3-bar-item w3-button">Schedules</a>
+  <a href="#score" class="w3-bar-item w3-button">Scores</a>
   <button class="w3-bar-item w3-button" onclick="w3_close()" >Close <i class="fa fa-remove"></i></button>
 </nav>
 
@@ -466,7 +474,7 @@ transition: 1s ease;
           </div>
     </div>
       <br></br>
-      <h1 class="titles" >MINIGAMES</h1>
+      <div id="minigames"><h1 class="titles" >MINIGAMES</h1></div>
 
       <div class="row">
         <div class="column">
@@ -480,231 +488,238 @@ transition: 1s ease;
         </div>
       </div>
 
+
       <br></br>
-      <h1 class="titles" >Schedules</h1>
-      <body>
-<div class="tab">
-  <button class="tablinks" onclick="openSport(event, 'Basketball')" id="defaultOpen">Basketball</button>
-  <button class="tablinks" onclick="openSport(event, 'Futsal')">Futsal</button>
-  <button class="tablinks" onclick="openSport(event, 'Cball')">Captain's Ball</button>
-</div>
+      <div id="schedules"><h1 class="titles" >SCHEDULES</h1></div>
 
-<div id="Basketball" class="tabcontent">
+  <div class="tab">
+    <button class="tablinks" onclick="openSport(event, 'Basketball')" id="defaultOpen">Basketball</button>
+    <button class="tablinks" onclick="openSport(event, 'Futsal')">Futsal</button>
+    <button class="tablinks" onclick="openSport(event, 'Cball')">Captain's Ball</button>
+  </div>
+
+  <div id="Basketball" class="tabcontent">
+    <div>
+    <table>
+      <thead>
+      <tr><th colspan="4">Basketball Schedule</th></tr>
+      </thead>
+      <tbody>
+      <tr>
+      <th rowspan="2">Time</th>
+      <th colspan="2">ISH 1</th>
+      <th style="border-left: 3px solid">ISH 2</th>
+      </tr>
+       <tr>
+          <th>Court 1</th>
+          <th>Court 2</th>
+          <th style="border-left: 3px solid">Court 1</th>
+        </tr>
+        <tr>
+          <th>1930 - 1940</th>
+          <td>01 vs 02</td>
+          <td>04 vs 05</td>
+          <td style="border-left: 3px solid">07 vs 08</td>
+        </tr>
+        <tr>
+          <th>1940 - 1945</th>
+          <th colspan="3" style="background-color:Orange;">Break</th>
+        </tr>
+        <tr>
+          <th>1945 - 1955</th>
+          <td>01 vs 03</td>
+          <td>04 vs 06</td>
+          <td style="border-left: 3px solid">08 vs 09</td>
+        </tr>
+        <tr>
+          <th>1955 - 2000</th>
+          <th colspan="3" style="background-color:Orange;">Break</th>
+        </tr>
+        <tr>
+          <th>2000 - 2010</th>
+          <td>02 vs 03</td>
+          <td>05 vs 06</td>
+          <td style="border-left: 3px solid">07 vs 09</td>
+        </tr>
+        <tr>
+          <th>2010 - 2035</th>
+          <th colspan="3" style="background-color:Orange;">Intermittent</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <div id="Futsal" class="tabcontent">
   <div>
-  <table>
-    <thead>
-    <tr><th colspan="4">Basketball Schedule</th></tr>
-    </thead>
-    <tbody>
-    <tr>
-    <th rowspan="2">Time</th>
-    <th colspan="2">ISH 1</th>
-    <th style="border-left: 3px solid">ISH 2</th>
-    </tr>
-     <tr>
-        <th>Court 1</th>
-        <th>Court 2</th>
-        <th style="border-left: 3px solid">Court 1</th>
-      </tr>
+    <table>
+      <thead>
+      <tr><th colspan="4">Futsal Schedule</th></tr>
+      </thead>
+      <tbody>
+      <tr><th colspan="4">Futsal Court</th></tr>
       <tr>
-        <th>1930 - 1940</th>
-        <td>01 vs 02</td>
-        <td>04 vs 05</td>
-        <td style="border-left: 3px solid">07 vs 08</td>
+        <th>Time</th>
+        <th>Game</th>
+        <th>Time</th>
+        <th>Game</th>    
       </tr>
-      <tr>
-        <th>1940 - 1945</th>
-        <th colspan="3" style="background-color:Orange;">Break</th>
-      </tr>
-      <tr>
-        <th>1945 - 1955</th>
-        <td>01 vs 03</td>
-        <td>04 vs 06</td>
-        <td style="border-left: 3px solid">08 vs 09</td>
-      </tr>
-      <tr>
-        <th>1955 - 2000</th>
-        <th colspan="3" style="background-color:Orange;">Break</th>
-      </tr>
-      <tr>
-        <th>2000 - 2010</th>
-        <td>02 vs 03</td>
-        <td>05 vs 06</td>
-        <td style="border-left: 3px solid">07 vs 09</td>
-      </tr>
-      <tr>
-        <th>2010 - 2035</th>
-        <th colspan="3" style="background-color:Orange;">Intermittent</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
+        <tr>
+          <th>1930 - 1940</th>
+          <td style="background-color:LightYellow;">01 vs 02</td>
+          <th>2032 - 2035</th>
+          <td>Break</td>
+        </tr>
+        <tr>
+        
+        <tr>
+          <th>1940 - 1943</th>
+          <td>Break</td>
+          <th>2032 - 2035</th>
+          <td style="background-color:MistyRose;">07 vs 09</td>
+        </tr>
+        
+        <tr>
+          <th>1943 - 1953</th>
+          <td style="background-color:PaleTurquoise;">04 vs 05</td>
+          <th>2045 - 2048</th>
+          <td>Break</td>
+        </tr>
+        <tr>
+        
+        <tr>
+          <th>1953 - 1956</th>
+          <td>Break</td>
+          <th>2048 - 2058</th>
+          <td style="background-color:LightYellow;">02 vs 03</td>
+        </tr>
+        <tr>
+        
+        <tr>
+          <th>1956 - 2006</th>
+          <td style="background-color:MistyRose;">07 vs 08</td>
+          <th>2058 - 2101</th>
+          <td>Break</td>
+        </tr>
+        
+        <tr>
+          <th>2006 - 2009</th>
+          <td>Break</td>
+          <th>2101 - 2111</th>
+          <td style="background-color:PaleTurquoise;">05 vs 06</td>
+        </tr>
+        
+        <tr>
+          <th>2009 - 2019</th>
+          <td style="background-color:LightYellow;">01 vs 03</td>
+          <th>2111 - 2114</th>
+          <td>Break</td>
+        </tr>
+        <tr>
+        
+        <tr>
+          <th>2019 - 2022</th>
+          <td>Break</td>
+          <th>2114 - 2124</th>
+          <td style="background-color:MistyRose;">08 vs 09</td>
+        </tr>
+        
+        <tr>
+          <th>2022 - 2032</th>
+          <td style="background-color:PaleTurquoise;">04 vs 06</td>
+          <th>2124 onwards</th>
+          <td style="background-color:LightGreen;">Proceed to ISH 1</td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+      </div>
+  </div>
 
-<div id="Futsal" class="tabcontent">
-<div>
-  <table>
-    <thead>
-    <tr><th colspan="4">Futsal Schedule</th></tr>
-    </thead>
-    <tbody>
-    <tr><th colspan="4">Futsal Court</th></tr>
-    <tr>
-      <th>Time</th>
-      <th>Game</th>
-      <th>Time</th>
-      <th>Game</th>    
-    </tr>
+  <div id="Cball" class="tabcontent">
+  <div>
+    <table>
+      <thead>
+      <tr><th colspan="4">Captain's Ball Schedule</th></tr>
+      </thead>
+      <tbody>
       <tr>
-        <th>1930 - 1940</th>
-        <td style="background-color:LightYellow;">01 vs 02</td>
-        <th>2032 - 2035</th>
-        <td>Break</td>
+      <th rowspan="2">Time</th>
+      <th colspan="2">ISH 1</th>
+      <th style="border-left: 3px solid">ISH 2</th>
       </tr>
-      <tr>
-      
-      <tr>
-        <th>1940 - 1943</th>
-        <td>Break</td>
-        <th>2032 - 2035</th>
-        <td style="background-color:MistyRose;">07 vs 09</td>
-      </tr>
-      
-      <tr>
-        <th>1943 - 1953</th>
-        <td style="background-color:PaleTurquoise;">04 vs 05</td>
-        <th>2045 - 2048</th>
-        <td>Break</td>
-      </tr>
-      <tr>
-      
-      <tr>
-        <th>1953 - 1956</th>
-        <td>Break</td>
-        <th>2048 - 2058</th>
-        <td style="background-color:LightYellow;">02 vs 03</td>
-      </tr>
-      <tr>
-      
-      <tr>
-        <th>1956 - 2006</th>
-        <td style="background-color:MistyRose;">07 vs 08</td>
-        <th>2058 - 2101</th>
-        <td>Break</td>
-      </tr>
-      
-      <tr>
-        <th>2006 - 2009</th>
-        <td>Break</td>
-        <th>2101 - 2111</th>
-        <td style="background-color:PaleTurquoise;">05 vs 06</td>
-      </tr>
-      
-      <tr>
-        <th>2009 - 2019</th>
-        <td style="background-color:LightYellow;">01 vs 03</td>
-        <th>2111 - 2114</th>
-        <td>Break</td>
-      </tr>
-      <tr>
-      
-      <tr>
-        <th>2019 - 2022</th>
-        <td>Break</td>
-        <th>2114 - 2124</th>
-        <td style="background-color:MistyRose;">08 vs 09</td>
-      </tr>
-      
-      <tr>
-        <th>2022 - 2032</th>
-        <td style="background-color:PaleTurquoise;">04 vs 06</td>
-        <th>2124 onwards</th>
-        <td style="background-color:LightGreen;">Proceed to ISH 1</td>
-      </tr>
-      <tr>
-    </tbody>
-  </table>
-    </div>
-</div>
+       <tr>
+          <th>Court 1</th>
+          <th>Court 2</th>
+          <th style="border-left: 3px solid">Court 1</th>
+        </tr>
+        <tr>
+          <th>2035 - 2045</th>
+          <td>01 vs 02</td>
+          <td>04 vs 05</td>
+          <td style="border-left: 3px solid">07 vs 08</td>
+        </tr>
+        <tr>
+          <th>2045 - 2050</th>
+          <th colspan="3" style="background-color:Plum;">Break</th>
+        </tr>
+        <tr>
+          <th>2050 - 2100</th>
+          <td>01 vs 03</td>
+          <td>04 vs 06</td>
+          <td style="border-left: 3px solid">08 vs 09</td>
+        </tr>
+        <tr>
+          <th>2100 - 2105</th>
+          <th colspan="3" style="background-color:Plum;">Break</th>
+        </tr>
+        <tr>
+          <th>2105 - 2115</th>
+          <td>02 vs 03</td>
+          <td>05 vs 06</td>
+          <td style="border-left: 3px solid">07 vs 09</td>
+        </tr>
+        <tr>
+          <th>2115 - 2135</th>
+          <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Intermittent</th>
+          <td rowspan="7" style="background-color:Gainsboro;"></td>
+        </tr>
+        <tr>
+          <th>2135 - 2145</th>
+          <td colspan="2" style="border-right: 3px solid">1A vs 1B</td>
+        </tr>
+        <tr>
+          <th>2145 - 2150</th>
+          <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Break</th>
+        </tr>
+        <tr>
+          <th>2150 - 2200</th>
+          <td colspan="2" style="border-right: 3px solid">1A vs 1C</td>
+        </tr>
+        <tr>
+        <th>2200 - 2205</th>
+          <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Break</th>
+        </tr>
+        <tr>
+          <th>2205 - 2215</th>
+          <td colspan="2" style="border-right: 3px solid">1B vs 1C</td>
+        </tr>
+        <tr>
+        <th>2215 - 2230</th>
+          <th colspan="2" style="background-color:Aquamarine;border-right: 3px solid">Award Ceremony</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
 
-<div id="Cball" class="tabcontent">
-<div>
-  <table>
-    <thead>
-    <tr><th colspan="4">Captain's Ball Schedule</th></tr>
-    </thead>
-    <tbody>
-    <tr>
-    <th rowspan="2">Time</th>
-    <th colspan="2">ISH 1</th>
-    <th style="border-left: 3px solid">ISH 2</th>
-    </tr>
-     <tr>
-        <th>Court 1</th>
-        <th>Court 2</th>
-        <th style="border-left: 3px solid">Court 1</th>
-      </tr>
-      <tr>
-        <th>2035 - 2045</th>
-        <td>01 vs 02</td>
-        <td>04 vs 05</td>
-        <td style="border-left: 3px solid">07 vs 08</td>
-      </tr>
-      <tr>
-        <th>2045 - 2050</th>
-        <th colspan="3" style="background-color:Plum;">Break</th>
-      </tr>
-      <tr>
-        <th>2050 - 2100</th>
-        <td>01 vs 03</td>
-        <td>04 vs 06</td>
-        <td style="border-left: 3px solid">08 vs 09</td>
-      </tr>
-      <tr>
-        <th>2100 - 2105</th>
-        <th colspan="3" style="background-color:Plum;">Break</th>
-      </tr>
-      <tr>
-        <th>2105 - 2115</th>
-        <td>02 vs 03</td>
-        <td>05 vs 06</td>
-        <td style="border-left: 3px solid">07 vs 09</td>
-      </tr>
-      <tr>
-        <th>2115 - 2135</th>
-        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Intermittent</th>
-        <td rowspan="7" style="background-color:Gainsboro;"></td>
-      </tr>
-      <tr>
-        <th>2135 - 2145</th>
-        <td colspan="2" style="border-right: 3px solid">1A vs 1B</td>
-      </tr>
-      <tr>
-        <th>2145 - 2150</th>
-        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Break</th>
-      </tr>
-      <tr>
-        <th>2150 - 2200</th>
-        <td colspan="2" style="border-right: 3px solid">1A vs 1C</td>
-      </tr>
-      <tr>
-      <th>2200 - 2205</th>
-        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Break</th>
-      </tr>
-      <tr>
-        <th>2205 - 2215</th>
-        <td colspan="2" style="border-right: 3px solid">1B vs 1C</td>
-      </tr>
-      <tr>
-      <th>2215 - 2230</th>
-        <th colspan="2" style="background-color:Aquamarine;border-right: 3px solid">Award Ceremony</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
+   <br></br>
+    <div id="score"><h1 class="titles" >SCOREBOARD</h1></div>
 
-</div>
-</body>
+    <div>
+    <a href="https://plotly.com/~henreads/1/?share_key=VOxS87d3FmjLiEerzUwkM1" target="_blank" title="Plot 1" style="display: block; text-align: center;"><img src="https://plotly.com/~henreads/1.png?share_key=VOxS87d3FmjLiEerzUwkM1" alt="Plot 1" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+    <script data-plotly="henreads:1" sharekey-plotly="VOxS87d3FmjLiEerzUwkM1" src="https://plotly.com/embed.js" async></script>
+  </div>
 
 
 
