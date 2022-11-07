@@ -10,6 +10,70 @@
 
 
 <style>
+
+div {
+    position: relative;
+    overflow-x:auto;
+    overflow-y:auto;
+  }
+
+  table {
+    position: relative;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th {
+    padding: 0.5em;
+    border: 1px solid black;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: #000;
+    color: #FFF;
+  }
+  
+  tbody th {
+    position: sticky;
+    left: 0;
+    background: #FFF;
+    padding-left: 30px;
+  padding-right: 40px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid ;
+  }
+  
+  tbody td{
+  text-align:center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid ;
+  border-left: 1px solid;
+  }
+  
+  .table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  table thead {
+    display: flex;
+  }
+  table td {
+    display: flex;
+  }
+  
+  table td::before {
+    font-weight: bold;
+    width: 120px;
+    min-width: 120px;
+  }
+}
+
 .titles {
   padding-top: 5%;
   padding-bottom:2%;
@@ -130,7 +194,39 @@
   1px 30px 60px rgba(16,16,16,0.4);
 }
 
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  colour: white;
 
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: GhostWhite;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color:#3f51b5;
+  color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  colour: white;
+}
 
 *,
 *::before,
@@ -300,7 +396,7 @@ a:active { text-decoration: none; }
 
 
 img {
-  max-width: 40%;
+  max-width: 50%;
   height: auto;
   border-radius: 50%;
 }
@@ -343,26 +439,30 @@ transition: 1s ease;
     <h1 class="titles" >MAIN EVENTS</h1>
     <div class="grid-container">
         <div class="left">
-          <a href="Schedules.html">
+          <a href=#Basketball onclick="openSport(event, 'Basketball')">
           <h3 class="basketball" style="font-size:20px;">Basketball</h3>
           <div class="rotate">
-           <img src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794__480.png"  width="300" height="300">
+           <img src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794__480.png"  width="270" height="27s0">
           </div>
           </a>
         </div>
 
         <div class="middle">
+          <a href=#Futsal onclick="openSport(event, 'Futsal')">
           <h3 class="soccer" style="font-size:20px;">Futsal</h3><br>
           <div class="rotate">
             <img src="https://www.kindpng.com/picc/m/112-1123233_soccer-ball-vector-png-transparent-png.png" width="310" height="310">
           </div>
+          </a>
         </div>
       
           <div class="right">
+            <a href=#Cball class="tablinks" onclick="openSport(event, 'Cball')">
             <h3 class="cball" style="font-size:20px;">Captain's Ball</h3>
             <div class="rotate">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjkHiAJy0RCPE2Jqq85qkHdVPxAiErxFoCIXL5u2MuFOMziM7mwR5DmIM61Ps--4YyjY&usqp=CAU"  width="330" height="330">
             </div>
+          </a>
           </div>
     </div>
       <br></br>
@@ -371,7 +471,7 @@ transition: 1s ease;
       <div class="row">
         <div class="column">
           <h3 class="minigame" style="font-size:20px;">Arcade Basketball</h3>
-            <img src="https://www.icegame.com/images/category/large/1504.png"  width="350" height="350">
+            <img src="https://www.icegame.com/images/category/large/1504.png"  width="400" height="400">
         </div>
   
         <div class="column">
@@ -379,8 +479,233 @@ transition: 1s ease;
             <img src="https://cdn-icons-png.flaticon.com/512/1930/1930630.png"  width="270" height="270">
         </div>
       </div>
+
+      <br></br>
+      <h1 class="titles" >Schedules</h1>
+      <body>
+<div class="tab">
+  <button class="tablinks" onclick="openSport(event, 'Basketball')" id="defaultOpen">Basketball</button>
+  <button class="tablinks" onclick="openSport(event, 'Futsal')">Futsal</button>
+  <button class="tablinks" onclick="openSport(event, 'Cball')">Captain's Ball</button>
+</div>
+
+<div id="Basketball" class="tabcontent">
+  <div>
+  <table>
+    <thead>
+    <tr><th colspan="4">Basketball Schedule</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th rowspan="2">Time</th>
+    <th colspan="2">ISH 1</th>
+    <th style="border-left: 3px solid">ISH 2</th>
+    </tr>
+     <tr>
+        <th>Court 1</th>
+        <th>Court 2</th>
+        <th style="border-left: 3px solid">Court 1</th>
+      </tr>
+      <tr>
+        <th>1930 - 1940</th>
+        <td>01 vs 02</td>
+        <td>04 vs 05</td>
+        <td style="border-left: 3px solid">07 vs 08</td>
+      </tr>
+      <tr>
+        <th>1940 - 1945</th>
+        <th colspan="3" style="background-color:Orange;">Break</th>
+      </tr>
+      <tr>
+        <th>1945 - 1955</th>
+        <td>01 vs 03</td>
+        <td>04 vs 06</td>
+        <td style="border-left: 3px solid">08 vs 09</td>
+      </tr>
+      <tr>
+        <th>1955 - 2000</th>
+        <th colspan="3" style="background-color:Orange;">Break</th>
+      </tr>
+      <tr>
+        <th>2000 - 2010</th>
+        <td>02 vs 03</td>
+        <td>05 vs 06</td>
+        <td style="border-left: 3px solid">07 vs 09</td>
+      </tr>
+      <tr>
+        <th>2010 - 2035</th>
+        <th colspan="3" style="background-color:Orange;">Intermittent</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div id="Futsal" class="tabcontent">
+<div>
+  <table>
+    <thead>
+    <tr><th colspan="4">Futsal Schedule</th></tr>
+    </thead>
+    <tbody>
+    <tr><th colspan="4">Futsal Court</th></tr>
+    <tr>
+      <th>Time</th>
+      <th>Game</th>
+      <th>Time</th>
+      <th>Game</th>    
+    </tr>
+      <tr>
+        <th>1930 - 1940</th>
+        <td style="background-color:LightYellow;">01 vs 02</td>
+        <th>2032 - 2035</th>
+        <td>Break</td>
+      </tr>
+      <tr>
+      
+      <tr>
+        <th>1940 - 1943</th>
+        <td>Break</td>
+        <th>2032 - 2035</th>
+        <td style="background-color:MistyRose;">07 vs 09</td>
+      </tr>
+      
+      <tr>
+        <th>1943 - 1953</th>
+        <td style="background-color:PaleTurquoise;">04 vs 05</td>
+        <th>2045 - 2048</th>
+        <td>Break</td>
+      </tr>
+      <tr>
+      
+      <tr>
+        <th>1953 - 1956</th>
+        <td>Break</td>
+        <th>2048 - 2058</th>
+        <td style="background-color:LightYellow;">02 vs 03</td>
+      </tr>
+      <tr>
+      
+      <tr>
+        <th>1956 - 2006</th>
+        <td style="background-color:MistyRose;">07 vs 08</td>
+        <th>2058 - 2101</th>
+        <td>Break</td>
+      </tr>
+      
+      <tr>
+        <th>2006 - 2009</th>
+        <td>Break</td>
+        <th>2101 - 2111</th>
+        <td style="background-color:PaleTurquoise;">05 vs 06</td>
+      </tr>
+      
+      <tr>
+        <th>2009 - 2019</th>
+        <td style="background-color:LightYellow;">01 vs 03</td>
+        <th>2111 - 2114</th>
+        <td>Break</td>
+      </tr>
+      <tr>
+      
+      <tr>
+        <th>2019 - 2022</th>
+        <td>Break</td>
+        <th>2114 - 2124</th>
+        <td style="background-color:MistyRose;">08 vs 09</td>
+      </tr>
+      
+      <tr>
+        <th>2022 - 2032</th>
+        <td style="background-color:PaleTurquoise;">04 vs 06</td>
+        <th>2124 onwards</th>
+        <td style="background-color:LightGreen;">Proceed to ISH 1</td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
     </div>
+</div>
+
+<div id="Cball" class="tabcontent">
+<div>
+  <table>
+    <thead>
+    <tr><th colspan="4">Captain's Ball Schedule</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th rowspan="2">Time</th>
+    <th colspan="2">ISH 1</th>
+    <th style="border-left: 3px solid">ISH 2</th>
+    </tr>
+     <tr>
+        <th>Court 1</th>
+        <th>Court 2</th>
+        <th style="border-left: 3px solid">Court 1</th>
+      </tr>
+      <tr>
+        <th>2035 - 2045</th>
+        <td>01 vs 02</td>
+        <td>04 vs 05</td>
+        <td style="border-left: 3px solid">07 vs 08</td>
+      </tr>
+      <tr>
+        <th>2045 - 2050</th>
+        <th colspan="3" style="background-color:Plum;">Break</th>
+      </tr>
+      <tr>
+        <th>2050 - 2100</th>
+        <td>01 vs 03</td>
+        <td>04 vs 06</td>
+        <td style="border-left: 3px solid">08 vs 09</td>
+      </tr>
+      <tr>
+        <th>2100 - 2105</th>
+        <th colspan="3" style="background-color:Plum;">Break</th>
+      </tr>
+      <tr>
+        <th>2105 - 2115</th>
+        <td>02 vs 03</td>
+        <td>05 vs 06</td>
+        <td style="border-left: 3px solid">07 vs 09</td>
+      </tr>
+      <tr>
+        <th>2115 - 2135</th>
+        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Intermittent</th>
+        <td rowspan="7" style="background-color:Gainsboro;"></td>
+      </tr>
+      <tr>
+        <th>2135 - 2145</th>
+        <td colspan="2" style="border-right: 3px solid">1A vs 1B</td>
+      </tr>
+      <tr>
+        <th>2145 - 2150</th>
+        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Break</th>
+      </tr>
+      <tr>
+        <th>2150 - 2200</th>
+        <td colspan="2" style="border-right: 3px solid">1A vs 1C</td>
+      </tr>
+      <tr>
+      <th>2200 - 2205</th>
+        <th colspan="2" style="background-color:Plum; border-right: 3px solid" >Break</th>
+      </tr>
+      <tr>
+        <th>2205 - 2215</th>
+        <td colspan="2" style="border-right: 3px solid">1B vs 1C</td>
+      </tr>
+      <tr>
+      <th>2215 - 2230</th>
+        <th colspan="2" style="background-color:Aquamarine;border-right: 3px solid">Award Ceremony</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
 </body>
+
 
 
 
@@ -415,6 +740,23 @@ function move() {
     }
   }
 }
+
+function openSport(evt, sports) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(sports).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 
 </script>
 
