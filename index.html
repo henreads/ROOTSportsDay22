@@ -100,7 +100,7 @@ table, tbody, tr, th, td{
   padding-bottom:7%;
   text-transform: uppercase;
   font-family: verdana;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 700;
   color: IndianRed;
   overflow:hidden;
@@ -114,7 +114,7 @@ table, tbody, tr, th, td{
   padding-bottom:0%;
   text-transform: uppercase;
   font-family: verdana;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 700;
   color: IndianRed;
   text-shadow: -1px 1px 1px #000,
@@ -127,7 +127,7 @@ table, tbody, tr, th, td{
   padding-bottom:4%;
   text-transform: uppercase;
   font-family: verdana;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 700;
   color: IndianRed;
   overflow:hidden;
@@ -360,6 +360,18 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
+a{
+  font-family: verdana;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  overflow:hidden;
+  text-decoration: underline;
+  text-shadow: -1px 1px 1px #000,
+               1px 1px 0 #000,
+               1px -1px 0 #000;
+
+}
 
 img {
   max-width: 50%;
@@ -426,10 +438,9 @@ body {
 
 
 
-
 </style>
 </head>
-
+<a name="top"></a>
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
   <a href="index.html" style="color:black" class="w3-bar-item w3-button">Events</a>
@@ -456,7 +467,7 @@ body {
     <div class="grid-container">
         <div class="left">
           <a href=#Basketball onclick="openSport(event, 'Basketball')">
-          <h3 class="basketball" style="font-size:20px;">Basketball</h3>
+          <h3 class="basketball">Basketball</h3>
           <div class="rotate">
            <img src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794__480.png"  width="270" height="27s0">
           </div>
@@ -465,16 +476,16 @@ body {
 
         <div class="middle">
           <a href=#Futsal onclick="openSport(event, 'Futsal')">
-          <h3 class="soccer" style="font-size:20px;">Futsal</h3><br>
+          <h3 class="soccer">Futsal</h3><br>
           <div class="rotate">
-            <img src="https://www.kindpng.com/picc/m/112-1123233_soccer-ball-vector-png-transparent-png.png" width="310" height="310">
+            <img src="https://www.kindpng.com/picc/m/112-1123233_soccer-ball-vector-png-transparent-png.png" width="250" height="250">
           </div>
           </a>
         </div>
       
           <div class="right">
             <a href=#Cball class="tablinks" onclick="openSport(event, 'Cball')">
-            <h3 class="cball" style="font-size:20px;">Captain's Ball</h3>
+            <h3 class="cball">Captain's Ball</h3>
             <div class="rotate">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjkHiAJy0RCPE2Jqq85qkHdVPxAiErxFoCIXL5u2MuFOMziM7mwR5DmIM61Ps--4YyjY&usqp=CAU"  width="330" height="330">
             </div>
@@ -487,7 +498,7 @@ body {
 
       <div class="row">
         <div class="column">
-          <h3 class="minigame" style="font-size:20px;">Arcade Basketball</h3>
+          <h3 class="minigame" style="font-size:20px;">Hoop Toss</h3>
             <img src="https://www.icegame.com/images/category/large/1504.png"  width="400" height="400">
         </div>
   
@@ -728,6 +739,10 @@ body {
     <div class="graph">
       <img src="https://plotly.com/~henreads/3.png?share_key=LB9SRp7GzTGoLRhDdyZIZN" alt="Plot 3" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" />
     <script data-plotly="henreads:3" sharekey-plotly="LB9SRp7GzTGoLRhDdyZIZN" src="https://plotly.com/embed.js" async></script>
+
+    <br></br>
+    <br></br>   
+    <u><a class="top" href="#top">Back to top</a></u>     
 
 </div>
 
