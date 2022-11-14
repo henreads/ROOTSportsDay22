@@ -84,20 +84,20 @@ table, tbody, tr, th, td{
 
 .titles {
   padding-top: 5%;
-  padding-bottom:2%;
+  padding-bottom:0%;
   text-transform: uppercase;
   font-family: verdana;
   font-size: 35px;
   font-weight: 700;
-  color: DarkCyan;
+  color: Aquamarine;
   text-shadow: -1px 1px 1px #000,
                1px 1px 0 #000,
                1px -1px 0 #000;
 }
 
 .basketball {
-  padding-top: 5%;
-  padding-bottom:7%;
+  padding-top: 1%;
+  padding-bottom:9%;
   text-transform: uppercase;
   font-family: verdana;
   font-size: 25px;
@@ -110,7 +110,7 @@ table, tbody, tr, th, td{
 }
 
 .soccer {
-  padding-top: 5%;
+  padding-top: 1%;
   padding-bottom:0%;
   text-transform: uppercase;
   font-family: verdana;
@@ -123,8 +123,8 @@ table, tbody, tr, th, td{
 }
 
 .cball {
-  padding-top: 7%;
-  padding-bottom:4%;
+  padding-top: 1%;
+  padding-bottom:9%;
   text-transform: uppercase;
   font-family: verdana;
   font-size: 25px;
@@ -138,7 +138,7 @@ table, tbody, tr, th, td{
 
 .minigame {
   padding-top: 0%;
-  padding-bottom:3%;
+  padding-bottom:2%;
   text-transform: uppercase;
   font-family: verdana;
   font-size: 40px;
@@ -159,14 +159,17 @@ table, tbody, tr, th, td{
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 17px;
-  colour: white;
-
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 1px 0 #000,
+               1px 1px 0 #000,
+               1px -1px 0 #000;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: GhostWhite;
+  background-color: grey;
+
 }
 
 /* Create an active/current tablink class */
@@ -180,6 +183,7 @@ table, tbody, tr, th, td{
   display: none;
   padding: 6px 12px;
   border-top: none;
+  color: white;
   }
 
 *,
@@ -339,6 +343,13 @@ table, tbody, tr, th, td{
   overflow:hidden;
 }
 
+img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 50%;
+  background: transparent;
+}
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .grid-container  {
@@ -351,6 +362,13 @@ table, tbody, tr, th, td{
   .column {
     width: 100%;
     overflow:hidden;
+  }
+
+  img {
+  max-width: 30%;
+  height: auto;
+  border-radius: 50%;
+  background: transparent;
   }
 }
 
@@ -367,17 +385,8 @@ a{
   color: white;
   overflow:hidden;
   text-decoration: underline;
-  text-shadow: -1px 1px 1px #000,
-               1px 1px 0 #000,
-               1px -1px 0 #000;
 
-}
 
-img {
-  max-width: 50%;
-  height: auto;
-  border-radius: 50%;
-  background: transparent;
 }
 
 .graph img{
@@ -389,7 +398,7 @@ img {
 .rotate img{
 transition: 1s ease;
 overflow:hidden;
-background-color: red;
+background-color: transparent;
 }
 
 .rotate img:hover{
@@ -451,7 +460,7 @@ body {
 
 <!-- Header -->
 <header class="w3-container w3-theme w3-padding" id="myHeader">
-  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <i onclick="w3_open()" class="fa fa-bars w3-xxlarge w3-button w3-theme"></i> 
   <div class="w3-center">
     <h4>Root presents</h4>
     <div class="content">
@@ -469,7 +478,7 @@ body {
           <a href=#Basketball onclick="openSport(event, 'Basketball')">
           <h3 class="basketball">Basketball</h3>
           <div class="rotate">
-           <img src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794__480.png"  width="270" height="27s0">
+           <img src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794__480.png"  width="200" height="200">
           </div>
           </a>
         </div>
@@ -478,7 +487,7 @@ body {
           <a href=#Futsal onclick="openSport(event, 'Futsal')">
           <h3 class="soccer">Futsal</h3><br>
           <div class="rotate">
-            <img src="https://www.kindpng.com/picc/m/112-1123233_soccer-ball-vector-png-transparent-png.png" width="250" height="250">
+            <img src="https://henreads.github.io/images-repo/download.png" width="200" height="200">
           </div>
           </a>
         </div>
@@ -487,7 +496,7 @@ body {
             <a href=#Cball class="tablinks" onclick="openSport(event, 'Cball')">
             <h3 class="cball">Captain's Ball</h3>
             <div class="rotate">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjkHiAJy0RCPE2Jqq85qkHdVPxAiErxFoCIXL5u2MuFOMziM7mwR5DmIM61Ps--4YyjY&usqp=CAU"  width="330" height="330">
+              <img src="https://henreads.github.io/images-repo/Cball.png"  width="200" height="200">
             </div>
           </a>
           </div> 
@@ -498,13 +507,13 @@ body {
 
       <div class="row">
         <div class="column">
-          <h3 class="minigame" style="font-size:20px;">Hoop Toss</h3>
-            <img src="https://www.icegame.com/images/category/large/1504.png"  width="400" height="400">
+          <h3 class="minigame" style="font-size:25px;">Hoop Toss</h3>
+            <img src="https://henreads.github.io/images-repo/arcade.png"  width="700" height="570">
         </div>
   
         <div class="column">
-          <h3 class="minigame" style="font-size:20px;">Pong</h3>
-            <img src="https://cdn-icons-png.flaticon.com/512/1930/1930630.png"  width="270" height="270">
+          <h3 class="minigame" style="font-size:25px;">Pong</h3>
+            <img src="https://cdn-icons-png.flaticon.com/512/1930/1930630.png"  width="160" height="160">
         </div>
       </div>
 
@@ -586,7 +595,7 @@ body {
       </tr>
         <tr>
           <th>1930 - 1940</th>
-          <td style="background-color:#ffd9b3;">01 vs 02</td>
+          <td style="background-color:#ffd9b3;">03 vs 07</td>
           <th>2032 - 2035</th>
           <td>Break</td>
         </tr>
@@ -595,13 +604,13 @@ body {
         <tr>
           <th>1940 - 1943</th>
           <td>Break</td>
-          <th>2032 - 2035</th>
-          <td style="background-color:MistyRose;">07 vs 09</td>
+          <th>2035 - 2045</th>
+          <td style="background-color:MistyRose;">06 vs 09</td>
         </tr>
         
         <tr>
           <th>1943 - 1953</th>
-          <td style="background-color:PaleTurquoise;">04 vs 05</td>
+          <td style="background-color:PaleTurquoise;">03 vs 05</td>
           <th>2045 - 2048</th>
           <td>Break</td>
         </tr>
@@ -611,13 +620,13 @@ body {
           <th>1953 - 1956</th>
           <td>Break</td>
           <th>2048 - 2058</th>
-          <td style="background-color:#ffd9b3;">02 vs 03</td>
+          <td style="background-color:#ffd9b3;">05 vs 07</td>
         </tr>
         <tr>
         
         <tr>
           <th>1956 - 2006</th>
-          <td style="background-color:MistyRose;">07 vs 08</td>
+          <td style="background-color:MistyRose;">03 vs 05</td>
           <th>2058 - 2101</th>
           <td>Break</td>
         </tr>
@@ -626,12 +635,12 @@ body {
           <th>2006 - 2009</th>
           <td>Break</td>
           <th>2101 - 2111</th>
-          <td style="background-color:PaleTurquoise;">05 vs 06</td>
+          <td style="background-color:PaleTurquoise;">02 vs 08</td>
         </tr>
         
         <tr>
           <th>2009 - 2019</th>
-          <td style="background-color:#ffd9b3;">01 vs 03</td>
+          <td style="background-color:#ffd9b3;">04 vs 08</td>
           <th>2111 - 2114</th>
           <td>Break</td>
         </tr>
@@ -641,7 +650,7 @@ body {
           <th>2019 - 2022</th>
           <td>Break</td>
           <th>2114 - 2124</th>
-          <td style="background-color:MistyRose;">08 vs 09</td>
+          <td style="background-color:MistyRose;">01 vs 09</td>
         </tr>
         
         <tr>
