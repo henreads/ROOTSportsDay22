@@ -36,6 +36,7 @@ div {
     position: sticky;
     top: 0;
     color:  black;
+    text-align:center;
   }
   
   tbody th {
@@ -46,6 +47,7 @@ div {
     border-top: 2px solid black;
     border-bottom: 2px solid ;
     color:  black;
+    text-align:center;
   }
   
   tbody td{
@@ -66,8 +68,8 @@ table, tbody, tr, th, td{
     background:rgba(255,255,255, 0.3);
 }
 
-@media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+@media only screen and (max-width: 500px)
+{
   table thead {
     display: flex;
   }
@@ -77,8 +79,8 @@ table, tbody, tr, th, td{
   
   table td::before {
     font-weight: bold;
-    width: 120px;
-    min-width: 120px;
+    width: 100px;
+    min-width: 100px;
   }
 }
 
@@ -531,48 +533,72 @@ body {
     <div>
     <table>
       <thead>
-      <tr><th colspan="4">Basketball Schedule</th></tr>
+      <tr><th colspan="3">Basketball Schedule</th></tr>
       </thead>
       <tbody>
       <tr>
-      <th rowspan="2">Time</th>
-      <th colspan="2">ISH 1</th>
-      <th style="border-left: 3px solid">ISH 2</th>
+      <th colspan="3" style="background-color:lightskyblue;">ISH 1</th>
       </tr>
-       <tr>
+      <tr>
+          <th>Time</th>
           <th>Court 1</th>
           <th>Court 2</th>
-          <th style="border-left: 3px solid">Court 1</th>
         </tr>
         <tr>
           <th>1930 - 1940</th>
-          <td>01 vs 02</td>
-          <td>04 vs 05</td>
-          <td style="border-left: 3px solid">07 vs 08</td>
+          <td>02 vs 04</td>
+          <td>03 vs 05</td>
         </tr>
         <tr>
           <th>1940 - 1945</th>
-          <th colspan="3" style="background-color:Orange;">Break</th>
+          <th colspan="2" style="background-color:Orange;">Break</th>
         </tr>
         <tr>
           <th>1945 - 1955</th>
-          <td>01 vs 03</td>
-          <td>04 vs 06</td>
-          <td style="border-left: 3px solid">08 vs 09</td>
+          <td>02 vs 08</td>
+          <td>03 vs 07</td>
         </tr>
         <tr>
           <th>1955 - 2000</th>
-          <th colspan="3" style="background-color:Orange;">Break</th>
+          <th colspan="2" style="background-color:Orange;">Break</th>
         </tr>
         <tr>
           <th>2000 - 2010</th>
-          <td>02 vs 03</td>
-          <td>05 vs 06</td>
-          <td style="border-left: 3px solid">07 vs 09</td>
+          <td>04 vs 08</td>
+          <td>05 vs 07</td>
         </tr>
         <tr>
           <th>2010 - 2035</th>
-          <th colspan="3" style="background-color:Orange;">Intermittent</th>
+          <th colspan="2" style="background-color:Orange;">Intermittent</th>
+        </tr>
+        <th colspan="3" style="background-color:lightskyblue;">ISH 2</th>
+        <tr>
+          <th>Time</th>
+          <th>Court 1</th>
+        </tr>
+        <tr>
+          <th>1930 - 1940</th>
+          <td>01 vs 06</td>
+        </tr>
+        <tr>
+          <th>1940 - 1945</th>
+          <th colspan="1" style="background-color:Orange;">Break</th>
+        </tr>
+        <tr>
+          <th>1945 - 1955</th>
+          <td>01 vs 09</td>
+        </tr>
+        <tr>
+          <th>1955 - 2000</th>
+          <th colspan="1" style="background-color:Orange;">Break</th>
+        </tr>
+        <tr>
+          <th>2000 - 2010</th>
+          <td>06 vs 09</td>
+        </tr>
+        <tr>
+          <th>2010 - 2035</th>
+          <th colspan="1" style="background-color:Orange;">Intermittent</th>
         </tr>
       </tbody>
     </table>
@@ -589,77 +615,80 @@ body {
       <tr><th colspan="4">Futsal Court</th></tr>
       <tr>
         <th>Time</th>
-        <th>Game</th>
-        <th>Time</th>
-        <th>Game</th>    
+        <th>Game</th>  
       </tr>
         <tr>
           <th>1930 - 1940</th>
           <td style="background-color:#ffd9b3;">03 vs 07</td>
+        </tr>
+        <tr>
+          <th>1940 - 1943</th>
+          <td>Break</td>
+        </tr>
+        <tr>
+          <th>1943 - 1953</th>
+          <td style="background-color:PaleTurquoise;">03 vs 05</td>
+        </tr>
+        <tr>
+          <th>1953 - 1956</th>
+          <td>Break</td>
+        </tr>
+        <tr>
+          <th>1956 - 2006</th>
+          <td style="background-color:MistyRose;">03 vs 05</td>
+        </tr>
+        <tr>
+          <th>2006 - 2009</th>
+          <td>Break</td>
+        </tr>
+        <tr>
+          <th>2009 - 2019</th>
+          <td style="background-color:#ffd9b3;">04 vs 08</td>
+        </tr>
+        <tr>
+          <th>2019 - 2022</th>
+          <td>Break</td>
+        </tr>
+        <tr>
+          <th>2022 - 2032</th>
+          <td style="background-color:PaleTurquoise;">04 vs 06</td>
+        </tr>
+        <tr>
           <th>2032 - 2035</th>
           <td>Break</td>
         </tr>
         <tr>
-        
-        <tr>
-          <th>1940 - 1943</th>
-          <td>Break</td>
           <th>2035 - 2045</th>
           <td style="background-color:MistyRose;">06 vs 09</td>
         </tr>
-        
         <tr>
-          <th>1943 - 1953</th>
-          <td style="background-color:PaleTurquoise;">03 vs 05</td>
           <th>2045 - 2048</th>
           <td>Break</td>
         </tr>
         <tr>
-        
-        <tr>
-          <th>1953 - 1956</th>
-          <td>Break</td>
           <th>2048 - 2058</th>
           <td style="background-color:#ffd9b3;">05 vs 07</td>
         </tr>
         <tr>
-        
-        <tr>
-          <th>1956 - 2006</th>
-          <td style="background-color:MistyRose;">03 vs 05</td>
           <th>2058 - 2101</th>
           <td>Break</td>
         </tr>
-        
         <tr>
-          <th>2006 - 2009</th>
-          <td>Break</td>
           <th>2101 - 2111</th>
           <td style="background-color:PaleTurquoise;">02 vs 08</td>
         </tr>
-        
         <tr>
-          <th>2009 - 2019</th>
-          <td style="background-color:#ffd9b3;">04 vs 08</td>
           <th>2111 - 2114</th>
           <td>Break</td>
         </tr>
         <tr>
-        
-        <tr>
-          <th>2019 - 2022</th>
-          <td>Break</td>
           <th>2114 - 2124</th>
           <td style="background-color:MistyRose;">01 vs 09</td>
         </tr>
-        
         <tr>
-          <th>2022 - 2032</th>
-          <td style="background-color:PaleTurquoise;">04 vs 06</td>
           <th>2124 onwards</th>
           <td style="background-color:LightGreen;">Proceed to ISH 1</td>
         </tr>
-        <tr>
       </tbody>
     </table>
       </div>
@@ -674,8 +703,8 @@ body {
       <tbody>
       <tr>
       <th rowspan="2">Time</th>
-      <th colspan="2">ISH 1</th>
-      <th style="border-left: 3px solid">ISH 2</th>
+      <th colspan="2"style="background-color:lightskyblue;">ISH 1</th>
+      <th style="border-left: 3px solid; background-color:lightskyblue;">ISH 2</th>
       </tr>
        <tr>
           <th>Court 1</th>
