@@ -23,7 +23,7 @@ div {
     border: 1px solid black;
     border-collapse: collapse;
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
 
   }
   
@@ -69,21 +69,6 @@ table, tbody, tr, th, td{
     background:rgba(255,255,255, 0.3);
 }
 
-@media only screen and (max-width: 100px)
-{
-  table thead {
-    display: flex;
-  }
-  table td {
-    display: flex;
-  }
-  
-  table td::before {
-    font-weight: bold;
-    width: 100px;
-    min-width: 100px;
-  }
-}
 
 .titles {
   padding-top: 5%;
