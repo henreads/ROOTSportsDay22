@@ -433,6 +433,19 @@ body {
 }
 
 
+.hoopDesc h4{
+  font-family: verdana;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  overflow:hidden;
+  align-content: flex-start;
+  width: 80%;
+  padding-left: 70px;
+  text-shadow: -1px 1px 0 #000,
+               1px 1px 0 #000,
+               1px -1px 0 #000;
+}
 
 
 </style>
@@ -496,12 +509,18 @@ body {
       <div class="row">
         <div class="column">
           <h3 class="minigame" style="font-size:25px;">Hoop Toss</h3>
-            <img src="https://henreads.github.io/images-repo/arcade.png"  width="700" height="570">
+            <img src="https://henreads.github.io/images-repo/arcade.png"  width="700" height="570" onclick="showDesc('hoop')">
+            <div style="display:none;" class="hoopDesc" id="hoop" >
+              <h4> Throw as many balls into the hoop as possible within the time limit!</h4>
+            </div>
         </div>
   
         <div class="column">
           <h3 class="minigame" style="font-size:25px;">Pong</h3>
-            <img src="https://cdn-icons-png.flaticon.com/512/1930/1930630.png"  width="160" height="160">
+            <img src="https://cdn-icons-png.flaticon.com/512/1930/1930630.png"  width="160" height="160" onclick="showDesc('pong')">
+            <div style="display:none;" class="hoopDesc" id="pong" >
+              <h4> Try to land as many ping pong balls into the cups at the end as possible within the time limit!</h4>
+            </div>            
         </div>
       </div>
 
@@ -794,8 +813,25 @@ body {
       <img src="https://plotly.com/~henreads/3.png?share_key=LB9SRp7GzTGoLRhDdyZIZN" alt="Plot 3" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" />
     <script data-plotly="henreads:3" sharekey-plotly="LB9SRp7GzTGoLRhDdyZIZN" src="https://plotly.com/embed.js" async></script>
 
+    <div class="venue">
+      <h1 class="titles" >VENUE LAYOUTS</h1>
+      <div class="tab">
+        <button class="tablinks2" onclick="openHall(event, 'ISH1')" id="defaultOpen2">ISH 1</button>
+        <button class="tablinks2" onclick="openHall(event, 'ISH2')">ISH 2</button>
+      </div>
+
+      <div id="ISH1" class="tabcontent2">
+        <img src="https://henreads.github.io/images-repo/ISH%201.jpg" style="max-width: 100%;width: 600px;">
+      </div>
+
+      <div id="ISH2" class="tabcontent2">
+        <img src="https://henreads.github.io/images-repo/ISH%202.jpg"  style="max-width: 100%;width: 600px;">
+      </div>
+
+    </div>
+
     <br></br>
-    <br></br>   
+    <br></br> 
     <u><a class="top" href="#top">Back to top</a></u>     
 
 </div>
@@ -818,6 +854,15 @@ function w3_open() {
 }
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
+}
+
+function showDesc (minigame){
+   var x = document.getElementById(minigame);
+    if(x.style.display=="none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 
 // Progress Bars
@@ -850,9 +895,23 @@ function openSport(evt, sports) {
   evt.currentTarget.className += " active";
 }
 
+function openHall(evt, halls) {
+  var i, tabcontent, tablinks;
+  tabcontent2 = document.getElementsByClassName("tabcontent2");
+  for (i = 0; i < tabcontent2.length; i++) {
+    tabcontent2[i].style.display = "none";
+  }
+  tablinks2 = document.getElementsByClassName("tablinks2");
+  for (i = 0; i < tablinks2.length; i++) {
+    tablinks2[i].className = tablinks2[i].className.replace(" active", "");
+  }
+  document.getElementById(halls).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
-
+document.getElementById("defaultOpen2").click();
 </script>
 
 </body>
