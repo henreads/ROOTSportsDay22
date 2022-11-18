@@ -331,12 +331,20 @@ table, tbody, tr, th, td{
   overflow:hidden;
 }
 
+.rectangle {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0%
+}
+
 img {
   max-width: 50%;
   height: auto;
   border-radius: 50%;
   background: transparent;
 }
+
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -358,6 +366,12 @@ img {
   border-radius: 50%;
   background: transparent;
   }
+
+  .rectangle{
+  max-width: 100%;
+  height: auto;
+  border-radius: 0%;
+}
 }
 
 
@@ -447,6 +461,20 @@ body {
                1px -1px 0 #000;
 }
 
+h4{
+  font-family: verdana;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  overflow:hidden;
+  align-content: flex-start;
+  width: 80%;
+  padding-left: 150px;
+  text-shadow: -1px 1px 0 #000,
+               1px 1px 0 #000,
+               1px -1px 0 #000;
+}
+
 
 </style>
 </head>
@@ -456,6 +484,7 @@ body {
   <a href="index.html" style="color:black; font-size: 15px;" class="w3-bar-item w3-button">Events</a>
   <a href="#schedules" style="color:black; font-size: 15px;" class="w3-bar-item w3-button">Schedules</a>
   <a href="#score" style="color:black; font-size: 15px;" class="w3-bar-item w3-button">Scores</a>
+  <a href="#venue" style="color:black; font-size: 15px;" class="w3-bar-item w3-button">Venue</a>
   <button style="color:black" class="w3-bar-item w3-button" onclick="w3_close()" >Close <i class="fa fa-remove"></i></button>
 </nav>
 
@@ -807,13 +836,49 @@ body {
   </div>
 
    <br></br>
-    <div id="score"><h1 class="titles" >SCOREBOARD</h1></div>
+    <div id="score">
+      <h1 class="titles" >SCOREBOARD</h1>
+      <div class="tab">
+        <button class="tablinks3" onclick="openScore(event, 'overall')" id="defaultOpen3">Overall</button>
+        <button class="tablinks3" onclick="openScore(event, 'bball')">Basketball</button>
+        <button class="tablinks3" onclick="openScore(event, 'soccer')">Futsal</button>
+        <button class="tablinks3" onclick="openScore(event, 'cpball')">Captain's Ball</button>
+      </div>
 
-    <div class="graph">
-      <img src="https://plotly.com/~henreads/3.png?share_key=LB9SRp7GzTGoLRhDdyZIZN" alt="Plot 3" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" />
-    <script data-plotly="henreads:3" sharekey-plotly="LB9SRp7GzTGoLRhDdyZIZN" src="https://plotly.com/embed.js" async></script>
+      <div id="overall" class="tabcontent3">
+        <div class="graph">
+          <img src="https://plotly.com/~henreads/3.png?share_key=LB9SRp7GzTGoLRhDdyZIZN" alt="Plot 3" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" />
+        <script data-plotly="henreads:3" sharekey-plotly="LB9SRp7GzTGoLRhDdyZIZN" src="https://plotly.com/embed.js" async></script>
+        </div>
+      </div>
 
-    <div class="venue">
+      <div id="bball" class="tabcontent3" onclick="BasketScore()">
+        <h4>Match: </h4>
+        <select>
+          <option value="0">Select match</option>
+          <option value="1">02 vs 04</option>
+          <option value="2">03 vs 05</option>
+          <option value="3">02 vs 08</option>
+          <option value="4">03 vs 07</option>
+          <option value="5">04 vs 08</option>
+          <option value="6">05 vs 07</option>
+          <option value="7">01 vs 06</option>
+          <option value="8">01 vs 09</option>
+          <option value="9">06 vs 09</option>
+        </select>
+        <h4 id="ele1">No Score Info</h4>
+      </div>
+
+      <div id="soccer" class="tabcontent3">
+
+      </div>
+
+      <div id="cpball" class="tabcontent3">
+
+    </div>
+  </div>
+  
+    <div class="venue" id="venue">
       <h1 class="titles" >VENUE LAYOUTS</h1>
       <div class="tab">
         <button class="tablinks2" onclick="openHall(event, 'ISH1')" id="defaultOpen2">ISH 1</button>
@@ -821,11 +886,11 @@ body {
       </div>
 
       <div id="ISH1" class="tabcontent2">
-        <img src="https://henreads.github.io/images-repo/ISH%201.jpg" style="max-width: 100%;width: 600px;">
+        <img src="https://henreads.github.io/images-repo/ISH%201.jpg" style="max-width: 100%;width: 600px;" class="rectangle">
       </div>
 
       <div id="ISH2" class="tabcontent2">
-        <img src="https://henreads.github.io/images-repo/ISH%202.jpg"  style="max-width: 100%;width: 600px;">
+        <img src="https://henreads.github.io/images-repo/ISH%202.jpg" style="max-width: 100%;width: 600px;" class="rectangle">
       </div>
 
     </div>
@@ -896,7 +961,7 @@ function openSport(evt, sports) {
 }
 
 function openHall(evt, halls) {
-  var i, tabcontent, tablinks;
+  var i, tabcontent2, tablinks2;
   tabcontent2 = document.getElementsByClassName("tabcontent2");
   for (i = 0; i < tabcontent2.length; i++) {
     tabcontent2[i].style.display = "none";
@@ -909,9 +974,56 @@ function openHall(evt, halls) {
   evt.currentTarget.className += " active";
 }
 
+function openScore(evt, score) {
+  var i, tabcontent3, tablinks3;
+  tabcontent3 = document.getElementsByClassName("tabcontent3");
+  for (i = 0; i < tabcontent3.length; i++) {
+    tabcontent3[i].style.display = "none";
+  }
+  tablinks3 = document.getElementsByClassName("tablinks3");
+  for (i = 0; i < tablinks3.length; i++) {
+    tablinks3[i].className = tablinks3[i].className.replace(" active", "");
+  }
+  document.getElementById(score).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function BasketScore(){
+  var select = document.getElementsByTagName('select')[0];
+  var score= document.getElementById('ele1');
+  select.addEventListener('change',function(e){ 
+    if(this.value=='0'){
+    ele1.innerHTML="2:9"
+    }else if(this.value=='1'){
+    ele1.innerHTML=""
+    }else if(this.value=='2'){
+    ele1.innerHTML=""
+    }else if(this.value=='3'){
+    ele1.innerHTML=""
+    }else if(this.value=='4'){
+    ele1.innerHTML=""
+    }else if(this.value=='5'){
+    ele1.innerHTML=""
+    }else if(this.value=='6'){
+    ele1.innerHTML=""
+    }else if(this.value=='7'){
+    ele1.innerHTML=""
+    }else if(this.value=='8'){
+    ele1.innerHTML=""
+    }else if(this.value=='9'){
+    ele1.innerHTML=""
+    }
+  })
+}
+
+
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 document.getElementById("defaultOpen2").click();
+document.getElementById("defaultOpen3").click();
+
+
+
 </script>
 
 </body>
