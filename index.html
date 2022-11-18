@@ -461,7 +461,7 @@ body {
                1px -1px 0 #000;
 }
 
-h4{
+label {
   font-family: verdana;
   font-size: 20px;
   font-weight: 700;
@@ -469,7 +469,6 @@ h4{
   overflow:hidden;
   align-content: flex-start;
   width: 80%;
-  padding-left: 150px;
   text-shadow: -1px 1px 0 #000,
                1px 1px 0 #000,
                1px -1px 0 #000;
@@ -747,8 +746,8 @@ h4{
         </tr>
         <tr>
           <th>2035 - 2045</th>
-          <td>01 vs 02</td>
-          <td>04 vs 05</td>
+          <td>02 vs 04</td>
+          <td>03 vs 05</td>
         </tr>
         <tr>
           <th>2045 - 2050</th>
@@ -756,8 +755,8 @@ h4{
         </tr>
         <tr>
           <th>2050 - 2100</th>
-          <td>01 vs 03</td>
-          <td>04 vs 06</td>
+          <td>02 vs 08</td>
+          <td>03 vs 07</td>
         </tr>
         <tr>
           <th>2100 - 2105</th>
@@ -765,8 +764,8 @@ h4{
         </tr>
         <tr>
           <th>2105 - 2115</th>
-          <td>02 vs 03</td>
-          <td>05 vs 06</td>
+          <td>04 vs 08</td>
+          <td>05 vs 07</td>
         </tr>
         <tr>
           <th>2115 - 2135</th>
@@ -852,9 +851,9 @@ h4{
         </div>
       </div>
 
-      <div id="bball" class="tabcontent3" onclick="BasketScore()">
-        <h4>Match: </h4>
-        <select>
+      <div id="bball" class="tabcontent3">
+        <label>Match: </label>
+        <select onchange="basketScore()" id="basket" >
           <option value="0">Select match</option>
           <option value="1">02 vs 04</option>
           <option value="2">03 vs 05</option>
@@ -866,16 +865,45 @@ h4{
           <option value="8">01 vs 09</option>
           <option value="9">06 vs 09</option>
         </select>
-        <h4 id="ele1">No Score Info</h4>
+        <label id="scores" style="display:block; padding-left:150px; padding-top:10px;">Score: No Score Info</label>
       </div>
 
       <div id="soccer" class="tabcontent3">
-
+        <label>Match: </label>
+        <select onchange="soccerScore()" id="futsal" >
+          <option value="0">Select match</option>
+          <option value="1">03 vs 07</option>
+          <option value="2">02 vs 04</option>
+          <option value="3">03 vs 05</option>
+          <option value="4">01 vs 06</option>
+          <option value="5">04 vs 08</option>
+          <option value="6">06 vs 09</option>
+          <option value="7">05 vs 07</option>
+          <option value="8">02 vs 08</option>
+          <option value="9">01 vs 09</option>
+        </select>
+        <label id="scores2" style="display:block; padding-left:150px; padding-top:10px;">Score: No Score Info</label>
       </div>
 
       <div id="cpball" class="tabcontent3">
-
-    </div>
+        <label>Match: </label>
+        <select onchange="cpScore()" id="cBall" >
+          <option value="0">Select match</option>
+          <option value="1">02 vs 04</option>
+          <option value="2">03 vs 05</option>
+          <option value="3">01 vs 06</option>
+          <option value="4">02 vs 08</option>
+          <option value="5">03 vs 07</option>
+          <option value="6">01 vs 09</option>
+          <option value="7">04 vs 08</option>
+          <option value="8">05 vs 07</option>
+          <option value="9">06 vs 09</option>
+          <option value="10">1A vs 1B</option>
+          <option value="11">1A vs 1C</option>
+          <option value="12">1B vs 1C</option>
+        </select>
+        <label id="scores3" style="display:block; padding-left:150px; padding-top:10px;">Score: No Score Info</label>
+      </div>
   </div>
   
     <div class="venue" id="venue">
@@ -988,33 +1016,93 @@ function openScore(evt, score) {
   evt.currentTarget.className += " active";
 }
 
-function BasketScore(){
-  var select = document.getElementsByTagName('select')[0];
-  var score= document.getElementById('ele1');
-  select.addEventListener('change',function(e){ 
-    if(this.value=='0'){
-    ele1.innerHTML=""
-    }else if(this.value=='1'){
-    ele1.innerHTML=""
-    }else if(this.value=='2'){
-    ele1.innerHTML=""
-    }else if(this.value=='3'){
-    ele1.innerHTML=""
-    }else if(this.value=='4'){
-    ele1.innerHTML=""
-    }else if(this.value=='5'){
-    ele1.innerHTML=""
-    }else if(this.value=='6'){
-    ele1.innerHTML=""
-    }else if(this.value=='7'){
-    ele1.innerHTML=""
-    }else if(this.value=='8'){
-    ele1.innerHTML=""
-    }else if(this.value=='9'){
-    ele1.innerHTML=""
+
+function basketScore() {
+  var x = document.getElementById("basket");
+  var score = document.getElementById("scores");
+  if(x.value=='0'){
+    score.innerHTML="Please Select a Match"
+    }else if(x.value=='1'){
+    score.innerHTML=" "
+    }else if(x.value=='2'){
+    score.innerHTML=" "
+    }else if(x.value=='3'){
+    score.innerHTML=" "
+    }else if(x.value=='4'){
+    score.innerHTML=" "
+    }else if(x.value=='5'){
+    score.innerHTML=" "
+    }else if(x.value=='6'){
+    score.innerHTML=" "
+    }else if(x.value=='7'){
+    score.innerHTML=" "
+    }else if(x.value=='8'){
+    score.innerHTML=" "
+    }else if(x.value=='9'){
+    score.innerHTML=" "
     }
-  })
 }
+
+function soccerScore() {
+  var x = document.getElementById("futsal");
+  console.log(x.value)
+  var score = document.getElementById("scores2");
+  if(x.value=='0'){
+    score.innerHTML="Please Select a Match"
+    }else if(x.value=='1'){
+    score.innerHTML=" "
+    }else if(x.value=='2'){
+    score.innerHTML=" "
+    }else if(x.value=='3'){
+    score.innerHTML=" "
+    }else if(x.value=='4'){
+    score.innerHTML=" "
+    }else if(x.value=='5'){
+    score.innerHTML=" "
+    }else if(x.value=='6'){
+    score.innerHTML=" "
+    }else if(x.value=='7'){
+    score.innerHTML=" "
+    }else if(x.value=='8'){
+    score.innerHTML=" "
+    }else if(x.value=='9'){
+    score.innerHTML=" "
+    }else if(x.value=='10'){
+    score.innerHTML=" "
+    }else if(x.value=='11'){
+    score.innerHTML=" "
+    }else if(x.value=='12'){
+    score.innerHTML=" "
+    }
+}
+
+function cpScore() {
+  var x = document.getElementById("cBall");
+  console.log(x.value)
+  var score = document.getElementById("scores3");
+  if(x.value=='0'){
+    score.innerHTML="Please Select a Match"
+    }else if(x.value=='1'){
+    score.innerHTML=" "
+    }else if(x.value=='2'){
+    score.innerHTML=" "
+    }else if(x.value=='3'){
+    score.innerHTML=" "
+    }else if(x.value=='4'){
+    score.innerHTML=" "
+    }else if(x.value=='5'){
+    score.innerHTML=" "
+    }else if(x.value=='6'){
+    score.innerHTML=" "
+    }else if(x.value=='7'){
+    score.innerHTML=" "
+    }else if(x.value=='8'){
+    score.innerHTML=" "
+    }else if(x.value=='9'){
+    score.innerHTML=" "
+    }
+}
+
 
 
 // Get the element with id="defaultOpen" and click on it
